@@ -1,0 +1,32 @@
+# Ignore unnecessary files for Docker build
+.git
+.gitignore
+README.md
+DEPLOYMENT_GUIDE.md
+PORTABLE_SETUP_README.md
+*.bat
+*.log
+node_modules
+.env
+.env.local
+.env.production
+.env.staging
+
+# Ignore development files
+ComLab_Portable_20251002/
+AUTO_SETUP_NEW_LAPTOP.bat
+CREATE_PORTABLE_PACKAGE.bat
+create_deployment_package.bat
+setup_portable_server.bat
+setup_school_lab_server.bat
+restore_original_config.bat
+
+# Ignore test files
+test_*.php
+debug_*.php
+*_test.php
+
+# Ignore cache and temporary files
+uploads/temp/
+cache/
+tmp/
