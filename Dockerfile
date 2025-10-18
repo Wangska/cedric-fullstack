@@ -63,10 +63,10 @@ RUN echo '<!DOCTYPE html>\n\
 <html>\n\
 <head>\n\
     <title>Clinic Management System</title>\n\
-    <meta http-equiv="refresh" content="0; url=landing.php">\n\
+    <meta http-equiv="refresh" content="0; url=index.php">\n\
 </head>\n\
 <body>\n\
-    <p>Redirecting to <a href="landing.php">Clinic Management System</a>...</p>\n\
+    <p>Redirecting to <a href="index.php">Clinic Management System</a>...</p>\n\
 </body>\n\
 </html>' > /var/www/html/index.html
 
