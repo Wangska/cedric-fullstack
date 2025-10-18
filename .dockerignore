@@ -4,6 +4,7 @@
 README.md
 DEPLOYMENT_GUIDE.md
 PORTABLE_SETUP_README.md
+COOLIFY_DEPLOYMENT_GUIDE.md
 *.bat
 *.log
 node_modules
@@ -20,6 +21,7 @@ create_deployment_package.bat
 setup_portable_server.bat
 setup_school_lab_server.bat
 restore_original_config.bat
+deploy-to-coolify.sh
 
 # Ignore test files
 test_*.php
@@ -30,3 +32,7 @@ debug_*.php
 uploads/temp/
 cache/
 tmp/
+
+# Ignore configuration files that might conflict
+nixpacks.toml
+.coolify.yml

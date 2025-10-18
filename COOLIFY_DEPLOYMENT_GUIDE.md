@@ -155,9 +155,11 @@ The application uses mPDF for PDF reports. This is already configured in the Doc
 ### **Common Issues:**
 
 1. **Nixpacks Build Error (PHP 7.4 deprecated)**
-   - **Solution:** Make sure to select "Dockerfile" as build method in Coolify
-   - **Alternative:** The `nixpacks.toml` and `.coolify.yml` files force Dockerfile usage
-   - **Check:** Verify "Use Dockerfile" is enabled in Coolify settings
+   - **Solution:** In Coolify, go to your application settings
+   - **Find "Build Settings" or "Build Configuration"**
+   - **Select "Dockerfile" as the build method**
+   - **Make sure "Use Dockerfile" is enabled**
+   - **Disable "Auto-detect" or "Nixpacks" if present**
 
 2. **Database Connection Failed**
    - Verify environment variables are correct
