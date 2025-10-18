@@ -1,0 +1,12 @@
+# Force Dockerfile usage - disable Nixpacks
+[phases.setup]
+nixPkgs = []
+
+[phases.install]
+cmds = []
+
+[phases.build]
+cmds = []
+
+[start]
+cmd = "apache2-foreground"

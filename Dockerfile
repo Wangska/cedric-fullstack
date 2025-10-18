@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     unzip \
     git \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
@@ -37,7 +38,7 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 # Copy application files
 COPY . .
 
-# Create necessary directories
+# Create necessary directories and set permissions
 RUN mkdir -p uploads/profiles email_logs \
     && chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
@@ -67,10 +68,6 @@ max_execution_time=300' > /usr/local/etc/php/conf.d/production.ini
 
 # Expose port 80
 EXPOSE 80
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost/ || exit 1
 
 # Start Apache
 CMD ["apache2-foreground"]
