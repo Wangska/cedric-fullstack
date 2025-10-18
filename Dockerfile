@@ -52,10 +52,23 @@ RUN echo '<VirtualHost *:80>\n\
     <Directory /var/www/html>\n\
         AllowOverride All\n\
         Require all granted\n\
+        DirectoryIndex index.php index.html\n\
     </Directory>\n\
     ErrorLog ${APACHE_LOG_DIR}/error.log\n\
     CustomLog ${APACHE_LOG_DIR}/access.log combined\n\
 </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
+
+# Create a simple index.html as fallback
+RUN echo '<!DOCTYPE html>\n\
+<html>\n\
+<head>\n\
+    <title>Clinic Management System</title>\n\
+    <meta http-equiv="refresh" content="0; url=landing.php">\n\
+</head>\n\
+<body>\n\
+    <p>Redirecting to <a href="landing.php">Clinic Management System</a>...</p>\n\
+</body>\n\
+</html>' > /var/www/html/index.html
 
 # Configure PHP for production
 RUN echo 'opcache.enable=1\n\
