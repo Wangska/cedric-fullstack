@@ -1,0 +1,29 @@
+# Coolify Configuration
+version: "1.0"
+
+# Force Dockerfile usage
+build:
+  method: dockerfile
+  dockerfile: Dockerfile
+
+# Application settings
+app:
+  name: "clinic-management-system"
+  type: "web"
+  port: 80
+
+# Environment variables (will be set in Coolify dashboard)
+env:
+  - DB_CONNECTION=mysql
+  - DB_HOST=joccwsg44gwo0oc0s8g48ko0
+  - DB_DATABASE=default
+  - DB_USERNAME=root
+  - DB_PASSWORD=0439VpH3ybiZZdDmbFH7mI1PXBBSSGfMwh96BdMEcBGGYH5gJsIFZAiTAfCwNJGz
+  - DB_PORT=3306
+
+# Health check
+healthcheck:
+  path: "/"
+  interval: 30s
+  timeout: 10s
+  retries: 3

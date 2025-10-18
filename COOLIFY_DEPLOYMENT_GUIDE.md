@@ -59,7 +59,8 @@ The application includes:
 3. **Select "Git Repository"**
 4. **Connect your Git provider** (GitHub/GitLab)
 5. **Select your repository**
-6. **Choose "Dockerfile" as build method**
+6. **IMPORTANT: Choose "Dockerfile" as build method**
+7. **Make sure "Use Dockerfile" is enabled** (not Nixpacks)
 
 ### **Step 3: Configure Environment Variables**
 
@@ -153,22 +154,27 @@ The application uses mPDF for PDF reports. This is already configured in the Doc
 
 ### **Common Issues:**
 
-1. **Database Connection Failed**
+1. **Nixpacks Build Error (PHP 7.4 deprecated)**
+   - **Solution:** Make sure to select "Dockerfile" as build method in Coolify
+   - **Alternative:** The `nixpacks.toml` and `.coolify.yml` files force Dockerfile usage
+   - **Check:** Verify "Use Dockerfile" is enabled in Coolify settings
+
+2. **Database Connection Failed**
    - Verify environment variables are correct
    - Check database server accessibility
    - Ensure database exists
 
-2. **File Upload Issues**
+3. **File Upload Issues**
    - Check file permissions
    - Verify upload directory exists
    - Check PHP upload limits
 
-3. **PDF Generation Errors**
+4. **PDF Generation Errors**
    - Verify mPDF is installed
    - Check PHP memory limits
    - Verify file paths
 
-4. **Session Issues**
+5. **Session Issues**
    - Check session configuration
    - Verify session storage
    - Clear browser cache
